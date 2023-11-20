@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const normalMessageSchema = new Schema({
+const friendMessageSchema = new Schema({
     message: {
         type: String,
         required: true
@@ -12,12 +12,12 @@ const normalMessageSchema = new Schema({
     attachment: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Attachment',
+        default: null
     },
     chatId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'NormalChat',
+        ref: 'FriendChat',
     },
-
 }, { timestamps: true })
 
-export default mongoose.model('NormalMessage', normalMessageSchema);
+export default mongoose.model('FriendMessage', friendMessageSchema);

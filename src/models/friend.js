@@ -1,12 +1,16 @@
 import mongoose, { Schema } from "mongoose";
 
 const friendSchema = new Schema({
-    userId: {
-        type: String,
-    },
-    friendId: {
-        type: String,
-    }
+    users: [{
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
+        nickname: {
+            type: String,
+            default: ''
+        }
+    }]
 })
 
 export default mongoose.model('Friend', friendSchema);

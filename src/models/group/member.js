@@ -7,14 +7,14 @@ const memberSchema = new Schema({
         required: true
     },
     role: {
-        type: String
+        type: Number,
     },
     nickname: {
         type: String
     },
     groupId: {
-        type: String,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'GroupChat'
     }
 })
 

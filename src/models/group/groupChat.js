@@ -5,18 +5,14 @@ const groupChatSchema = new Schema({
         type: String,
         required: true
     },
-    member: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Member',
-        required: true
-    },
     avatar: {
         type: String,
         default: ''
     },
     color: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Color'
+        ref: 'Color',
+        default: new mongoose.Types.ObjectId('6523e5250d0570225083e8e4')
     }
 })
 
